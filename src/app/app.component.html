@@ -1,1 +1,14 @@
-AAJLI Boujemaa
+<nav class="p-3">
+  <ul class="nav nav-pills">
+    <li *ngFor="let action of actions">
+      <button
+        [ngClass]="action == currentAction?'btn btn-success ms-1':'btn btn-outline-success ms-1'"
+        (click)="handleRoute(action)" >
+        {{action.title}}
+        <i class="bi bi-{{action.icon}}"></i>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
